@@ -7,6 +7,7 @@
   },
   "main": "dist/index.js",
   "scripts": {
+    "vercel-build": "npm install && npx prisma generate && prisma migrate deploy && tsc",
     "build-firebase": "prisma migrate deploy && tsc",
     "build": "npm install && prisma migrate deploy && npx prisma generate && tsc",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
